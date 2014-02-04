@@ -58,6 +58,6 @@ use dosamigos\chartjs\Chart;
 ChartJs has lots of configuration options. For further information, please check the
 [ChartJs plugin](http://www.chartjs.org/docs/) website.
 
-> [![2amigOS!](http://www.gravatar.com/avatar/55363394d72945ff7ed312556ec041e0.png)](http://www.2amigos.us)
-<i>Web development has never been so fun!</i>
+> [![2amigOS!](http://www.gravatar.com/avatar/55363394d72945ff7ed312556ec041e0.png)](http://www.2amigos.us)  
+<i>Web development has never been so fun!</i>  
 [www.2amigos.us](http://www.2amigos.us)
