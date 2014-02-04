@@ -1,4 +1,4 @@
-yii2-chartjs-widget
+ChartJs Widget
 ===================
 
 Renders a [ChartJs plugin](http://www.chartjs.org/docs/) widget
