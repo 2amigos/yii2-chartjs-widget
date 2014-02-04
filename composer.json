@@ -1,0 +1,24 @@
+{
+    "name": "2amigos/yii2-chartjs-widget",
+    "description": "ChartJs widget for Yii2.",
+    "keywords": ["yii", "extension", "widget", "chartjs"],
+    "homepage": "https://github.com/2amigos/yii2-chartjs-widget",
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Antonio Ramirez",
+            "email": "amigo.cobos@gmail.com",
+            "homepage" : "http://2amigos.us"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "dosamigos\\chartjs\\": ""
+        }
+    }
+}
