@@ -18,7 +18,7 @@ use yii\web\AssetBundle;
  */
 class ChartPluginAsset extends AssetBundle
 {
-	public $sourcePath = '@vendor/dosamigos/chartjs/assets';
+	public $sourcePath = '@vendor/2amigos/chartjs/assets';
 
 	public function init()
 	{
