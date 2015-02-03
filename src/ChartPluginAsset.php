@@ -9,7 +9,7 @@ namespace dosamigos\chartjs;
 use yii\web\AssetBundle;
 
 /**
- * 
+ *
  * ChartPluginAsset.php
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
@@ -18,10 +18,10 @@ use yii\web\AssetBundle;
  */
 class ChartPluginAsset extends AssetBundle
 {
-	public $sourcePath = '@vendor/2amigos/yii2-chartjs-widget/assets';
+    public $sourcePath = '@bower/chartjs';
 
-	public function init()
-	{
-		$this->js = YII_DEBUG ? ['js/Chart.js'] : ['js/Chart.min.js'];
-	}
+    public function init()
+    {
+        $this->js = YII_DEBUG ? ['Chart.js'] : ['Chart.min.js'];
+    }
 }

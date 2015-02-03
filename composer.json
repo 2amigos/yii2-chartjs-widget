@@ -14,11 +14,12 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "yiisoft/yii2": "*"
+        "yiisoft/yii2": "*",
+        "bower-asset/chartjs" : "1.0.1"
     },
     "autoload": {
         "psr-4": {
-            "dosamigos\\chartjs\\": ""
+            "dosamigos\\chartjs\\": "src"
         }
     }
 }
