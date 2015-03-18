@@ -10,7 +10,7 @@ use yii\web\AssetBundle;
 
 /**
  *
- * ChartPluginAsset.php
+ * ChartPluginAsset
  *
  * @author Antonio Ramirez <amigo.cobos@gmail.com>
  * @link http://www.ramirezcobos.com/
