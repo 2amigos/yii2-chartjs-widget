@@ -45,9 +45,9 @@ The following example is using the `Line` type of chart. Please, check [ChartJs 
 documentation for the different types supported by the plugin.
 
 ```
-use dosamigos\chartjs\Chart;
+use dosamigos\chartjs\ChartJs;
 
-<?= Chart::widget([
+<?= ChartJs::widget([
     'type' => 'Line',
     'options' => [
         'height' => 400,
