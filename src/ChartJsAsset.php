@@ -16,7 +16,7 @@ use yii\web\AssetBundle;
  * @link http://www.ramirezcobos.com/
  * @link http://www.2amigos.us/
  */
-class ChartPluginAsset extends AssetBundle
+class ChartJsAsset extends AssetBundle
 {
     public $sourcePath = '@bower/chartjs';
 

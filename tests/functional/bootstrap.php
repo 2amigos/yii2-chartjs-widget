@@ -1,0 +1,20 @@
+<?php
+ /**
+ *
+ * bootstrap.php
+ *
+ * Date: 06/03/15
+ * Time: 13:26
+ * @author Antonio Ramirez <amigo.cobos@gmail.com>
+ * @link http://www.ramirezcobos.com/
+ * @link http://www.2amigos.us/
+ */
+error_reporting(-1);
+define('YII_ENABLE_ERROR_HANDLER', false);
+define('YII_DEBUG', true);
+$_SERVER['SCRIPT_NAME'] = '/' . __DIR__;
+$_SERVER['SCRIPT_FILENAME'] = __FILE__;
+require_once(__DIR__ . '/../../vendor/autoload.php');
+require_once(__DIR__ . '/../../vendor/yiisoft/yii2/Yii.php');
+Yii::setAlias('@tests', __DIR__);
+require_once(__DIR__ . '/TestCase.php');

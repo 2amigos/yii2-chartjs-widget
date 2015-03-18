@@ -1,25 +1,48 @@
 {
     "name": "2amigos/yii2-chartjs-widget",
     "description": "ChartJs widget for Yii2.",
-    "keywords": ["yii", "extension", "widget", "chartjs"],
-    "homepage": "https://github.com/2amigos/yii2-chartjs-widget",
     "type": "yii2-extension",
+    "keywords": [
+        "2amigos",
+        "yii",
+        "yii2",
+        "yii 2",
+        "extension",
+        "widget",
+        "chartjs"
+    ],
+    "homepage": "http://yiiwheels.com/extension/chartjs-widget",
     "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "Antonio Ramirez",
-            "email": "amigo.cobos@gmail.com",
-            "homepage" : "http://2amigos.us"
+            "name": "2amigOS! Consulting Group",
+            "email": "hola@2amigos.us",
+            "homepage": "http://2amigos.us",
+            "role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://github.com/2amigos/yii2-chartjs-widget/issues",
+        "source": "https://github.com/2amigos/yii2-chartjs-widget"
+    },
     "require": {
         "yiisoft/yii2": "*",
-        "bower-asset/chartjs" : "1.0.1"
+        "bower-asset/chartjs": "1.0.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*"
     },
     "autoload": {
         "psr-4": {
             "dosamigos\\chartjs\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "asset-installer-paths": {
+            "bower-asset-library": "vendor/bower"
         }
     }
 }

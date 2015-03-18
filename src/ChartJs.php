@@ -19,7 +19,7 @@ use yii\helpers\Json;
  * @link http://www.ramirezcobos.com/
  * @link http://www.2amigos.us/
  */
-class Chart extends Widget
+class ChartJs extends Widget
 {
     /**
      * @var array the HTML attributes for the widget container tag.
@@ -77,27 +77,23 @@ class Chart extends Widget
     public function run()
     {
         echo Html::tag('canvas', '', $this->options);
-        $this->registerPlugin($this->type);
+        $this->registerClientScript();
     }
 
     /**
-     * Registers a specific ChartJS plugin and the related events
-     *
-     * @param string $name the name of the ChartJS plugin
+     * Registers the required js files and script to initialize ChartJS plugin
      */
-    protected function registerPlugin($name)
+    protected function registerClientScript()
     {
-        $view = $this->getView();
-
-        ChartPluginAsset::register($view);
-
         $id = $this->options['id'];
+        $type = $this->type;
+        $view = $this->getView();
+        $data = !empty($this->data) ? Json::encode($this->data) : '{}';
+        $options = !empty($this->clientOptions) ? Json::encode($this->clientOptions) : '{}';
 
-        if ($this->clientOptions !== false && !empty($this->data)) {
-            $options = empty($this->clientOptions) ? '{}' : Json::encode($this->clientOptions);
-            $data = empty($this->data) ? '[]' : Json::encode($this->data);
-            $js = "var chartJS = new Chart(document.getElementById('$id').getContext('2d')).$name($data, $options);";
-            $view->registerJs($js);
-        }
+        ChartJsAsset::register($view);
+
+        $js = ";var chartJS_{$id} = new Chart(document.getElementById('{$id}').getContext('2d')).{$type}({$data}, {$options});";
+        $view->registerJs($js);
     }
 }
