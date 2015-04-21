@@ -17,7 +17,6 @@ class FullWidthChartJs extends ChartJs
 		$js = <<<JS
 (function () {
 	var canvasWidth = $("#{$canvas_id}").parent().width();
-	console.log(canvasWidth);
 	document.getElementById("{$canvas_id}").width = canvasWidth;
 })();
 JS;
