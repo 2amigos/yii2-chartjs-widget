@@ -48,7 +48,7 @@ documentation for the different types supported by the plugin.
 use dosamigos\chartjs\ChartJs;
 
 <?= ChartJs::widget([
-    'type' => 'Line',
+    'type' => 'line',
     'options' => [
         'height' => 400,
         'width' => 400
