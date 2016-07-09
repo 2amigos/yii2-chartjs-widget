@@ -8,8 +8,10 @@ namespace dosamigos\chartjs;
 
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
+use yii\web\JsExpression;
 
 /**
  *
@@ -86,14 +88,18 @@ class ChartJs extends Widget
     protected function registerClientScript()
     {
         $id = $this->options['id'];
-        $type = $this->type;
         $view = $this->getView();
-        $data = !empty($this->data) ? Json::encode($this->data) : '{}';
-        $options = !empty($this->clientOptions) ? Json::encode($this->clientOptions) : '{}';
-
         ChartJsAsset::register($view);
 
-        $js = ";var chartJS_{$id} = new Chart(document.getElementById('{$id}').getContext('2d')).{$type}({$data}, {$options});";
+        $config = Json::encode(
+            [
+                'type' => $this->type,
+                'data' => $this->data ?: new JsExpression('{}'),
+                'options' => $this->clientOptions ?: new JsExpression('{}')
+            ]
+        );
+
+        $js = ";var chartJS_{$id} = new Chart($('#{$id}'),{$config});";
         $view->registerJs($js);
     }
 }

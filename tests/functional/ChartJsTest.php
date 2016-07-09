@@ -45,7 +45,6 @@ class ChartJsTest extends TestCase
     public function testRenderContainer()
     {
         $out = ChartJs::widget($this->config);
-
         $expected = '<canvas id="test_chartjs" width="400" height="400"></canvas>';
         $this->assertEqualsWithoutLE($expected, $out);
     }
@@ -70,7 +69,7 @@ class ChartJsTest extends TestCase
         $method->invoke($widget);
 
         $test = <<<JS
-;var chartJS_test_chartjs = new Chart(document.getElementById('test_chartjs').getContext('2d')).Line({"labels":["January","February","March","April","May","June","July"],"datasets":[{"fillColor":"rgba(220,220,220,0.5)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","data":[65,59,90,81,56,55,40]},{"fillColor":"rgba(151,187,205,0.5)","strokeColor":"rgba(151,187,205,1)","pointColor":"rgba(151,187,205,1)","pointStrokeColor":"#fff","data":[28,48,40,19,96,27,100]}]}, {});
+;var chartJS_test_chartjs = new Chart($('#test_chartjs'),{"type":"Line","data":{"labels":["January","February","March","April","May","June","July"],"datasets":[{"fillColor":"rgba(220,220,220,0.5)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","data":[65,59,90,81,56,55,40]},{"fillColor":"rgba(151,187,205,0.5)","strokeColor":"rgba(151,187,205,1)","pointColor":"rgba(151,187,205,1)","pointStrokeColor":"#fff","data":[28,48,40,19,96,27,100]}]},"options":{}});
 JS;
         $this->assertEquals($test, $view->js[View::POS_READY]['test-chartjs-js']);
     }

@@ -18,10 +18,10 @@ use yii\web\AssetBundle;
  */
 class ChartJsAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/chartjs';
+    public $sourcePath = '@bower/chartjs/dist';
 
-    public function init()
-    {
-        $this->js = YII_DEBUG ? ['Chart.js'] : ['Chart.min.js'];
-    }
+    public $js = [
+        'Chart.js'
+    ];
+
 }
