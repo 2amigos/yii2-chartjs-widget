@@ -25,6 +25,8 @@
         "issues": "https://github.com/2amigos/yii2-chartjs-widget/issues",
         "source": "https://github.com/2amigos/yii2-chartjs-widget"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "yiisoft/yii2": "*",
         "bower-asset/chartjs": "2.1.6"
@@ -37,12 +39,17 @@
             "dosamigos\\chartjs\\": "src"
         }
     },
+    "config": {
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        }
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
-        },
-        "asset-installer-paths": {
-            "bower-asset-library": "vendor/bower"
         }
     }
 }
