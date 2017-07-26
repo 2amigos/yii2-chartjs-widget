@@ -12,7 +12,7 @@ namespace tests;
 use dosamigos\chartjs\ChartJsAsset;
 use yii\web\AssetBundle;
 
-class ChartAssetTest extends TestCase
+class ChartJsAssetTest extends TestCase
 {
     public function testRegister()
     {
