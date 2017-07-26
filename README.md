@@ -40,7 +40,11 @@ The following types are supported:
 - Radar 
 - Polar 
 - Pie 
-- Doughnut
+- Doughnut 
+- Bubble 
+- Scatter 
+- Area 
+- Mixed
 
 The following example is using the `Line` type of chart. Please, check [ChartJs plugin](http://www.chartjs.org/docs/) 
 documentation for the different types supported by the plugin.
