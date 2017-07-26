@@ -1,9 +1,17 @@
 <?php
+
+/*
+ * This file is part of the 2amigos/yii2-chartjs-widget project.
+ * (c) 2amigOS! <http://2amigos.us/>
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
 namespace tests;
 
-use Yii;
 use dosamigos\chartjs\ChartJs;
 use tests\overrides\TestChartJs;
+use Yii;
 use yii\web\View;
 
 class ChartJsTest extends TestCase
@@ -49,13 +57,13 @@ class ChartJsTest extends TestCase
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testTypeException() {
+    public function testTypeException()
+    {
         $this->setExpectedException('yii\base\InvalidConfigException');
         $config = $this->config;
         unset($config['type']);
         ChartJs::begin($config);
     }
-
 
     public function testRegisterClientScript()
     {

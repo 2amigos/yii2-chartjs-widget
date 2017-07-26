@@ -6,7 +6,8 @@ ChartJs Widget
 [![Build Status](https://img.shields.io/travis/2amigos/yii2-chartjs-widget/master.svg?style=flat-square)](https://travis-ci.org/2amigos/yii2-chartjs-widget)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/2amigos/yii2-chartjs-widget.svg?style=flat-square)](https://scrutinizer-ci.com/g/2amigos/yii2-chartjs-widget/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/2amigos/yii2-chartjs-widget.svg?style=flat-square)](https://scrutinizer-ci.com/g/2amigos/yii2-chartjs-widget)
-[![Total Downloads](https://img.shields.io/packagist/dt/2amigos/yii2-chartjs-widget.svg?style=flat-square)](https://packagist.org/packages/2amigos/yii2-chartjs-widget)
+[![Total Downloads](https://img.shields.io/packagist/dt/2amigos/yii2-chartjs-widget.svg?style=flat-square)](https://packagist.org/packages/2amigos/yii2-chartjs-widget) 
+[![StyleCI](https://styleci.io/repos/16515084/shield?branch=master)](https://styleci.io/repos/16515084)
 
 Renders a [ChartJs plugin](http://www.chartjs.org/docs/) widget
 

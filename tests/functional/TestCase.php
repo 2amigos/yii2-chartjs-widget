@@ -1,4 +1,12 @@
 <?php
+
+/*
+ * This file is part of the 2amigos/yii2-chartjs-widget project.
+ * (c) 2amigOS! <http://2amigos.us/>
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
 namespace tests;
 
 use yii\helpers\ArrayHelper;
@@ -41,6 +49,19 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     {
         parent::tearDown();
         $this->destroyApplication();
+    }
+
+    /**
+     * Asserting two strings equality ignoring line endings
+     *
+     * @param string $expected
+     * @param string $actual
+     */
+    public function assertEqualsWithoutLE($expected, $actual)
+    {
+        $expected = str_replace("\r\n", "\n", $expected);
+        $actual = str_replace("\r\n", "\n", $actual);
+        $this->assertEquals($expected, $actual);
     }
 
     protected function mockApplication($config = [], $appClass = '\yii\console\Application')
@@ -111,19 +132,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
                 ]
             )
         );
-        return $view;
-    }
 
-    /**
-     * Asserting two strings equality ignoring line endings
-     *
-     * @param string $expected
-     * @param string $actual
-     */
-    public function assertEqualsWithoutLE($expected, $actual)
-    {
-        $expected = str_replace("\r\n", "\n", $expected);
-        $actual = str_replace("\r\n", "\n", $actual);
-        $this->assertEquals($expected, $actual);
+        return $view;
     }
 }
