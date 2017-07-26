@@ -12,7 +12,6 @@ $finder = PhpCsFixer\Finder::create()
             '.github',
             'docs',
             'temp',
-            'tests',
             'vendor',
             'runtime',
             'public'
