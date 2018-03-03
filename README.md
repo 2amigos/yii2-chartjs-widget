@@ -97,10 +97,10 @@ echo ChartJs::widget([
     ],
     'data' => [
         'radius' =>  "90%",
-        'labels' => $model->consumptionPercentage['labels'], // Your labels
+        'labels' => ['Label 1', 'Label 2', 'Label 3'], // Your labels
         'datasets' => [
             [
-                'data' => $model->consumptionPercentage['dataSet'], // Your dataset
+                'data' => ['35.6', '17.5', '46.9'], // Your dataset
                 'label' => '',
                 'backgroundColor' => [
                         '#ADC3FF',
