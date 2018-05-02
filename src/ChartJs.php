@@ -54,11 +54,18 @@ class ChartJs extends Widget
      *             shaped more like a doughnut than a pie!
      */
     public $type;
+    /**
+     * @var array the plugin objects allowing to assign custom callback functions to Chart events.
+     *            See [plugins & events documentation]
+     *            (http://www.chartjs.org/docs/latest/developers/plugins.html#plugin-core-api).
+     */
+    public $plugins = [];
 
     /**
      * Initializes the widget.
      * This method will register the bootstrap asset bundle. If you override this method,
      * make sure you call the parent implementation first.
+     * @throws InvalidConfigException
      */
     public function init()
     {
@@ -93,7 +100,8 @@ class ChartJs extends Widget
             [
                 'type' => $this->type,
                 'data' => $this->data ?: new JsExpression('{}'),
-                'options' => $this->clientOptions ?: new JsExpression('{}')
+                'options' => $this->clientOptions ?: new JsExpression('{}'),
+                'plugins' => $this->plugins
             ]
         );
 
