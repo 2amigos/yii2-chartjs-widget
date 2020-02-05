@@ -22,6 +22,6 @@ class ChartJsAssetTest extends TestCase
         $this->assertCount(2, $view->assetBundles);
         $this->assertInstanceOf(AssetBundle::class, $view->assetBundles['dosamigos\\chartjs\\ChartJsAsset']);
         $content = $view->renderFile('@tests/views/rawlayout.php');
-        $this->assertStringContainsStringIgnoringCase('Chart.js', $content);
+        $this->assertStringContainsStringIgnoringCase('Chart.bundle.js', $content);
     }
 }
