@@ -90,7 +90,7 @@ class ChartJs extends Widget
     /**
      * Registers the required js files and script to initialize ChartJS plugin
      */
-    protected function registerClientScript()
+    protected function registerClientScript(): void
     {
         $id = $this->options['id'];
         $view = $this->getView();

@@ -26,3 +26,9 @@ index
 
 # php_cs
 .php_cs.cache
+
+# composer
+composer.lock
+
+# php unit
+.phpunit.result.cache

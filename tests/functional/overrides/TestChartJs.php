@@ -17,7 +17,7 @@ use yii\web\View;
 
 class TestChartJs extends ChartJs
 {
-    public function registerClientScript()
+    public function registerClientScript(): void
     {
         $id = $this->options['id'];
         $view = $this->getView();

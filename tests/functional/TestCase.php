@@ -16,14 +16,14 @@ use yii\web\View;
 /**
  * This is the base class for all yii framework unit tests.
  */
-abstract class TestCase extends \PHPUnit_Framework_TestCase
+abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     public static $params;
 
     /**
      * Mock application prior running tests.
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mockWebApplication(
             [
@@ -45,7 +45,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      * Clean up after test.
      * By default the application created with [[mockApplication]] will be destroyed.
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
         $this->destroyApplication();
@@ -57,14 +57,14 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      * @param string $expected
      * @param string $actual
      */
-    public function assertEqualsWithoutLE($expected, $actual)
+    public function assertEqualsWithoutLE($expected, $actual): void
     {
         $expected = str_replace("\r\n", "\n", $expected);
         $actual = str_replace("\r\n", "\n", $actual);
         $this->assertEquals($expected, $actual);
     }
 
-    protected function mockApplication($config = [], $appClass = '\yii\console\Application')
+    protected function mockApplication($config = [], $appClass = '\yii\console\Application'): void
     {
         new $appClass(
             ArrayHelper::merge(
@@ -78,7 +78,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         );
     }
 
-    protected function mockWebApplication($config = [], $appClass = '\yii\web\Application')
+    protected function mockWebApplication($config = [], $appClass = '\yii\web\Application'): void
     {
         new $appClass(
             ArrayHelper::merge(
@@ -86,6 +86,10 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
                     'id' => 'testapp',
                     'basePath' => __DIR__,
                     'vendorPath' => $this->getVendorPath(),
+                    'aliases' => [
+                        '@bower' => '@vendor/bower-asset',
+                        '@npm'   => '@vendor/npm-asset',
+                    ],
                     'components' => [
                         'request' => [
                             'cookieValidationKey' => 'wefJDF8sfdsfSDefwqdxj9oq',
@@ -103,15 +107,15 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         );
     }
 
-    protected function getVendorPath()
+    protected function getVendorPath(): string
     {
-        return dirname(dirname(__DIR__)) . '/vendor';
+        return dirname(__DIR__, 2) . '/vendor';
     }
 
     /**
      * Destroys application in Yii::$app by setting it to null.
      */
-    protected function destroyApplication()
+    protected function destroyApplication(): void
     {
         \Yii::$app = null;
     }
@@ -121,7 +125,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      *
      * @return View
      */
-    protected function getView()
+    protected function getView(): View
     {
         $view = new View();
         $view->setAssetManager(

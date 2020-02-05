@@ -18,7 +18,7 @@ class ChartJsTest extends TestCase
 {
     protected $config = [];
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->config = [
@@ -29,19 +29,19 @@ class ChartJsTest extends TestCase
                 'width' => 400
             ],
             'data' => [
-                'labels' => ["January", "February", "March", "April", "May", "June", "July"],
+                'labels' => ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 'datasets' => [
                     [
-                        'fillColor' => "rgba(220,220,220,0.5)",
-                        'strokeColor' => "rgba(220,220,220,1)",
-                        'pointColor' => "rgba(220,220,220,1)",
-                        'pointStrokeColor' => "#fff",
+                        'fillColor' => 'rgba(220,220,220,0.5)',
+                        'strokeColor' => 'rgba(220,220,220,1)',
+                        'pointColor' => 'rgba(220,220,220,1)',
+                        'pointStrokeColor' => '#fff',
                         'data' => [65, 59, 90, 81, 56, 55, 40]
                     ],
                     [
-                        'fillColor' => "rgba(151,187,205,0.5)",
-                        'strokeColor' => "rgba(151,187,205,1)",
-                        'pointColor' => "rgba(151,187,205,1)",
+                        'fillColor' => 'rgba(151,187,205,0.5)',
+                        'strokeColor' => 'rgba(151,187,205,1)',
+                        'pointColor' => 'rgba(151,187,205,1)',
                         'pointStrokeColor' => "#fff",
                         'data' => [28, 48, 40, 19, 96, 27, 100]
                     ]
@@ -50,22 +50,22 @@ class ChartJsTest extends TestCase
         ];
     }
 
-    public function testRenderContainer()
+    public function testRenderContainer(): void
     {
         $out = ChartJs::widget($this->config);
         $expected = '<canvas id="test_chartjs" width="400" height="400"></canvas>';
         $this->assertEqualsWithoutLE($expected, $out);
     }
 
-    public function testTypeException()
+    public function testTypeException(): void
     {
-        $this->setExpectedException('yii\base\InvalidConfigException');
+        $this->expectException('yii\base\InvalidConfigException');
         $config = $this->config;
         unset($config['type']);
         ChartJs::begin($config);
     }
 
-    public function testRegisterClientScript()
+    public function testRegisterClientScript(): void
     {
         $class = new \ReflectionClass('tests\\overrides\\TestChartJs');
         $method = $class->getMethod('registerClientScript');

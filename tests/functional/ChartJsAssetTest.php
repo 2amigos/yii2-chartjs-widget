@@ -14,14 +14,14 @@ use yii\web\AssetBundle;
 
 class ChartJsAssetTest extends TestCase
 {
-    public function testRegister()
+    public function testRegister(): void
     {
         $view = $this->getView();
         $this->assertEmpty($view->assetBundles);
         ChartJsAsset::register($view);
-        $this->assertEquals(2, count($view->assetBundles));
-        $this->assertTrue($view->assetBundles['dosamigos\\chartjs\\ChartJsAsset'] instanceof AssetBundle);
+        $this->assertCount(2, $view->assetBundles);
+        $this->assertInstanceOf(AssetBundle::class, $view->assetBundles['dosamigos\\chartjs\\ChartJsAsset']);
         $content = $view->renderFile('@tests/views/rawlayout.php');
-        $this->assertContains('Chart.js', $content);
+        $this->assertStringContainsStringIgnoringCase('Chart.js', $content);
     }
 }
