@@ -17,10 +17,10 @@ use yii\web\AssetBundle;
  */
 class ChartJsAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/nnnick/chartjs/dist';
+    public $sourcePath = null;
 
     public $js = [
-        'Chart.bundle.js'
+        'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js'
     ];
 
     public $depends = [
