@@ -20,7 +20,7 @@ set.
 
 Either run
 
-```
+```bash
 composer require 2amigos/yii2-chartjs-widget:~2.0
 ```
 or add
@@ -49,7 +49,8 @@ The following types are supported:
 The following example is using the `Line` type of chart. Please, check [ChartJs plugin](http://www.chartjs.org/docs/) 
 documentation for the different types supported by the plugin.
 
-```
+```php
+
 use dosamigos\chartjs\ChartJs;
 
 <?= ChartJs::widget([
@@ -86,8 +87,11 @@ use dosamigos\chartjs\ChartJs;
 ]);
 ?>
 ```
+
 Plugins usage example (displaying percentages on the Pie Chart):
-```
+
+```php
+
 echo ChartJs::widget([
     'type' => 'pie',
     'id' => 'structurePie',
